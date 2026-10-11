@@ -1,2 +1,2 @@
-html, body { magin: 0; height: 100%; background: #090c26; overflow: hidden; }
+html, body { margin: 0; height: 100%; background: #090c26; overflow: hidden; }
 #stage { position: absolute; left: 50%; top: 50%; width: 1280px; height: 720px; background: #141a4a; transform-origin: center;}
