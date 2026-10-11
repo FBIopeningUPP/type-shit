@@ -1,2 +1,51 @@
-html, body { margin: 0; height: 100%; background: #090c26; overflow: hidden; }
-#stage { position: absolute; left: 50%; top: 50%; width: 1280px; height: 720px; background: #141a4a; transform-origin: center;}
+:root {
+    --ground: #141a4a;
+    --lane-alt: #1c2468;
+    --ink: #090c26;
+    --orange: #ff5b2e;
+    --yellow: #ffd84a;
+    --paper: #f4efe3;
+    --muted: #b4b9ea;
+    --muted-2: #d6d9f5;
+    --border: #8f95d6;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0;
+    height: 100%;
+    background: var(--ink);
+    overflow: hidden;
+    color: var(--paper);
+    font-family: "Archivo Narrow", sans-serif;
+    font-weight: 500;
+}
+
+h1, h2, h3, p { margin: 0; }
+h1, h2, h3 { font-family: "Dela Gothic One", sans-serif; font-weight: 400; }
+button{ font: inherit; color: inherit; cursor: pointer; }
+
+#stage {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 1280px;
+    height: 720px;
+    background: var(--ground);
+    transform-origin: center;
+}
+
+:focus-visible { outline: 3px solid var(--paper); outline-offset: 3px; }
+.screen {display: none; position: absolute; inset: 0; padding: 40px; }
+.screen.active { display: block; }
+
+#screen-tune {padding: 26px 48px;}
+.tune-head { display: flex; justify-content: space-between; align-items: flex-start;}
+.wordmark { font-size: 108px; line-height: .95; color: var(--yellow); text-shadow: 6px 6px 0 var(--orange);}
+.cursor { display: inline-block; width: .42rem; height: .7em; margin-left: .1em; background: var(--orange); animation: blink 1s steps(1) infinite;}
+.tagline { display: inline-block; width: .42em; height: .7em; margin-top: 6px;}
+.sticker-off { margin-top: 20px; background: var(--orange); color: var(--ink); border: 3px solid var (--ink); box-shadow: 6px 6px 0 var(--paper); padding: 10px 24px; font: 400 30px "Dela Gothic One", sans-serif; transform: rotate(4deg);}
+
+@keyframes blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important;}}

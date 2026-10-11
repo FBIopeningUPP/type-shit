@@ -4,9 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>type-shit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;700&family=Dela+Gothic+One&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <div id="stage"></div>
+    <div id="stage">
+      <section id="screen-tune" class="screen active">
+        <header class="tune-head">
+          <div>
+            <h1 class="wordmark"><span date-game-name>type-shit</span><i class="cursor"></i></h1>
+            <p class="tagline">A pirate radio rhythm game. Tune in to anything.</p>
+          </div>
+          <div class="sticker-off">Off Air</div>
+        </header>
+      </section>
+      <section id="screen-game" class="screen">
+        <h1>Gameplay</h1>
+      </section>
+      <section id="screen-results" class="screen">
+        <h1>Results</h1>
+      </section>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
