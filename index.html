@@ -6,7 +6,7 @@
     <title>type-shit</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;70lay=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;700&family=Dela+Gothic+One&display=swap" rel="stylesheet" />
 </head>
 <body>
   <div id="stage">
@@ -28,7 +28,7 @@
           </button>
           <button class="card" data-freq="99.1">
             <span class="freq">99.1</span>
-            <span class="info"><b>Capture a tab</b><small>Play along with whateve/small></span>
+            <span class="info"><b>Capture a tab</b><small>Play along with whatever is on another browser tab.</small></span>
             <span class="tag">Tuned in</span>
           </button>
           <button class="card" data-freq="105.5">
@@ -59,7 +59,32 @@
 
     <section id="screen-game" class="screen">
       <div class="game-grid">
-        <div class="col-left"><p class="label">Left Column</p></div>
+        <div class="col-left">
+          <div class="station">
+            <i class="tape"></i>
+            <span class="fm">FM</span>
+            <span class="big-freq">93.7</span>
+            <span class="station-sub">Night Shift Pirate Signal</span>
+          </div>
+          <div class="now">
+            <span class="label">Now playing</span>
+            <div class="song">Night Shift</div>
+            <div class="meta">Upload 128 BPM</div>
+            <div class="meta">Sensitivity 62%</div>
+          </div>
+          <div class="spectrum">
+            <i style="--h:40%"></i><i style="--h:70%"></i><i class="y" style="--h:90%"></i>
+            <i style="--h:55%"></i><i style="--h:30%"></i><i style="--h:80%"></i>
+            <i style="--h:60%"></i><i class="y" style="--h:95%"></i><i style="--h:45%"></i>
+            <i style="--h:65%"></i><i style="--h:35%"></i><i style="--h:75%"></i>
+            <i style="--h:50%"></i><i style="--h:25%"></i>
+          </div>
+          <div class="score-block">
+            <span class="label">Score</span>
+            <div class="score">318,450</div>
+            <div class="meta">Accuray 94.2% Best Streak 187</div>
+          </div>
+        </div>
         <div class="col-center"><p class="label">Center Column</p></div>
         <div class="col-right"><p class="label">Right column</p></div>
       </div>
