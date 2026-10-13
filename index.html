@@ -13,14 +13,55 @@
       <section id="screen-tune" class="screen active">
         <header class="tune-head">
           <div>
-            <h1 class="wordmark"><span date-game-name>type-shit</span><i class="cursor"></i></h1>
+            <h1 class="wordmark"><span data-game-name>type-shit</span><i class="cursor"></i></h1>
             <p class="tagline">A pirate radio rhythm game. Tune in to anything.</p>
           </div>
           <div class="sticker-off">Off Air</div>
         </header>
+        <div id="dial" class="dial"></div>
+        <div class="tune-body">
+          <div class="cards">
+            <button class="card selected" data-freq="93.7">
+              <span class="freq">93.7</span>
+              <span class="info"><b>Upload a song</b><small>Drop an mp3, wav or ogg and we build the map.</small></span>
+              <span class="tag">Tuned in</span>
+            </button>
+            <button class="card" data-freq="99.1">
+              <span class="freq">99.1</span>
+              <span class="info"><b>Capture a tab</b><small>Play along with whatever is on another browser tab.</small></span>
+              <span class="tag">Tuned in</span>
+            </button>
+            <button class="card" data-freq="105.5">
+              <span class="freq">105.5</span>
+              <span class="info"><b>Demo Track</b><small>No file handy? lets go with built in shit.</small></span>
+              <span class="tag">Tuned In</span>
+            </button>
+          </div>
+          <aside class="setup">
+            <h2>Broadcast setup</h2>
+            <label class="slider">
+              <span class="row"><b>Sensitivity</b><output>62%</output></span>
+              <input type="range" min="0" max="100" value="62" data-unit="%" />
+            </label>
+            <label class="slider">
+              <span class="row"><b>Minimum Gap</b><output>120 ms</output></span>
+              <input type="range" min="40" max="400" value="120" data-unit=" ms" />
+            </label>
+            <div class="lanes-row">
+              <b>Lanes</b>
+              <span class="mini-key">D</span><span class="mini-key">F</span>
+              <span class="mini-key">J</span><span class="mini-key">K</span>
+            </div>
+            <button id="btn-start" class="btn-start">Start Broadcast</button>
+          </aside>
+        </div>
       </section>
       <section id="screen-game" class="screen">
-        <h1>Gameplay</h1>
+        <div class="game-grid">
+          <div class="col-left"><p class="label">Left Column</p></div>
+          <div class="col-center"><p class="label">Center Column</p></div>
+          <div class="col-right"><p class="label">Right column</p></div>
+        </div>
       </section>
       <section id="screen-results" class="screen">
         <h1>Results</h1>

@@ -43,9 +43,56 @@ button{ font: inherit; color: inherit; cursor: pointer; }
 #screen-tune {padding: 26px 48px;}
 .tune-head { display: flex; justify-content: space-between; align-items: flex-start;}
 .wordmark { font-size: 108px; line-height: .95; color: var(--yellow); text-shadow: 6px 6px 0 var(--orange);}
-.cursor { display: inline-block; width: .42rem; height: .7em; margin-left: .1em; background: var(--orange); animation: blink 1s steps(1) infinite;}
-.tagline { display: inline-block; width: .42em; height: .7em; margin-top: 6px;}
-.sticker-off { margin-top: 20px; background: var(--orange); color: var(--ink); border: 3px solid var (--ink); box-shadow: 6px 6px 0 var(--paper); padding: 10px 24px; font: 400 30px "Dela Gothic One", sans-serif; transform: rotate(4deg);}
-
+.cursor { display: inline-block; width: .42em; height: .7em; margin-left: .1em; background: var(--orange); animation: blink 1s steps(1) infinite; }
+.tagline { font-size: 22px; color: var(--muted-2); margin-top: 6px; }
+.sticker-off { margin-top: 20px; background: var(--orange); color: var(--ink); border: 3px solid var(--ink); box-shadow: 6px 6px 0 var(--paper); padding: 10px 24px; font: 400 30px "Dela Gothic One", sans-serif; transform: rotate(4deg); }
 @keyframes blink { 50% { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important;}}
+
+.dial { position: relative; height: 96px; margin-top: 16px; background: var(--paper); border: 3px solid var(--ink);}
+.dial .scale {position: absolute; inset: 0 28px;}
+.tick { position: absolute; top: 28px; width: 2px; background: var(--ink); transform: translateX(-50%);}
+.tick.major { height: 36px; width: 3px; }
+.tick.mid { height: 22px; }
+.tick.minor { height: 12px ;}
+.num { position: absolute; top: 5px; transform: translateX(-50%); font: 700 15px "Archivo Narrow", sans-serif; color: var(--ink); }
+.mark { position: absolute; bottom: 5px; transform: translateX(-50%); border: 8px solid transparent; border-top: 0; border-bottom: 14px solid var(--ink); }
+.needle { position: absolute; top: -3px; bottom: -3px; width: 4px; background: var(--orange); box-shadow: 0 0 0 2px var(--ink); transform: translateX(-50%); transition: left .3s; }
+
+.tune-body { display: flex; gap: 36px; margin-top: 24px; }
+.cards { flex: 1; display: flex; flex-direction: column; gap: 14px; }
+.card { position: relative; display: flex; align-items: center; gap: 24px; height: 118px; padding: 0 28px; text-align: left; background: var(--lane-alt); color: var(--paper); border: 3px solid var(--border); transition: transform 0.08s, box-shadow 0.08s;}
+.card .freq { font: 400 54px "Dela Gothic One", sans-serif; color: var(--orange); min-width: 200px; }
+.card .info b { display: block; font-size: 26px; text-transform: uppercase; }
+.card .info small { font-size: 17px; color: var(--muted-2); }
+.card .tag { display: none; position: absolute; top: -14px; right: 22px; background: var(--ink); color: var(--paper); font: 700 14px "Archivo Narrow", sans-serif; text-transform: uppercase; padding: 4px 12px; transform: rotate(4deg); }
+.card.selected { background: var(--yellow); color: var(--ink); border-color: var(--ink); box-shadow: 7px 7px 0 var(--orange); }
+.card.selected .freq, .card.selected .info small { color: var(--ink); }
+.card.selected .tag { display: block; }
+.card:hover { transform: translate(-2px, -2px); }
+.card:active { transform: translate(2px, 2px); }
+
+.setup { width: 380px; background: var(--orange); color: var(--ink); border: 3px solid var(--ink); box-shadow: 8px 8px 0 var(--yellow); padding: 22px 26px; display: flex; flex-direction: column; gap: 16px; }
+.setup h2 {font-size: 30px;}
+.slider { display: block; }
+.slider .row { display: flex; justify-content: space-between; font-size: 18px; margin-bottom: 6px; }
+.slider output { font-weight: 700; }
+.slider input { width: 100%; height: 14px; -webkit-appearance: none; appearance: none; background: var(--ink); border-radius: 0;}
+.slider input::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 30px; background: var(--ink); border: 3px solid var(--paper); }
+.slider input::-moz-range-thumb { width: 18px; height: 24px; background: var(--ink); border: 3px solid var(--paper); border-radius: 0; }
+.lanes-row { display: flex; align-items: center; gap: 8px; font-size: 18px; }
+.lanes-row b { margin-right: auto; }
+.mini-key { width: 34px; height: 34px; display: grid; place-items: center; background: var(--paper); border: 3px solid var(--ink); box-shadow: 0 3px 0 var(--ink); font: 400 16px "Dela Gothic One", sans-serif; }
+.btn-start { margin-top: auto; background: var(--ink); color: var(--yellow); border: 3px solid var(--ink); font: 400 26px "Dela Gothic One", sans-serif; padding: 16px; box-shadow: 5px 5px 0 var(--paper); transition: transform .08s, box-shadow .08s; }
+.btn-start:hover { transform: translate(2px, 2px); box-shadow: 3px 3px 0 var(--paper); }
+.btn-start:active { transform: translate(4px, 4px); box-shadow: 1px 1px 0 var(--paper); }
+
+
+
+#screen-game { padding: 30px 40px; }
+.game-grid {display: grid; grid-template-columns: 300px 520px 320px; gap: 30px; height: 100%; }
+.col-left, .col-right { display: flex; flex-direction: column; justify-content: space-between; min-height: 0; }
+.col-center { display: flex; flex-direction: column; gap: 14px; }
+.label { font: 700 14px "Acrhivo Narrow", sans-serif; text-transform: uppercase; letter-spacing: .12em; color: var(--muted);}
+
+.col-left, .col-center, .col-right { outline: 2px dashed var(--border);}
