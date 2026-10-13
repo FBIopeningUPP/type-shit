@@ -24,6 +24,7 @@ cards.forEach((card) => {
   });
 });
 
+<<<<<<< HEAD
 document.querySelectorAll(".slider input").forEach((input) => {
   const out = input.parentElement.querySelector("output");
   const update = () => (out.textContent = input.value + input.dataset.unit);
@@ -33,6 +34,8 @@ document.querySelectorAll(".slider input").forEach((input) => {
 
 document.getElementById("btn-start").addEventListener("click", () => show("screen-game"));
 
+=======
+>>>>>>> e83f7ab91c2dc3c4daf2201950c5615f44303176
 export function show(id) {
   document.querySelectorAll(".screen").forEach((s) => {
     s.classList.toggle("active", s.id === id);

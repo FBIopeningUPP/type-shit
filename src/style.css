@@ -70,6 +70,7 @@ button{ font: inherit; color: inherit; cursor: pointer; }
 .card.selected .freq, .card.selected .info small { color: var(--ink); }
 .card.selected .tag { display: block; }
 .card:hover { transform: translate(-2px, -2px); }
+<<<<<<< HEAD
 .card:active { transform: translate(2px, 2px); }
 
 .setup { width: 380px; background: var(--orange); color: var(--ink); border: 3px solid var(--ink); box-shadow: 8px 8px 0 var(--yellow); padding: 22px 26px; display: flex; flex-direction: column; gap: 16px; }
@@ -96,3 +97,6 @@ button{ font: inherit; color: inherit; cursor: pointer; }
 .label { font: 700 14px "Acrhivo Narrow", sans-serif; text-transform: uppercase; letter-spacing: .12em; color: var(--muted);}
 
 .col-left, .col-center, .col-right { outline: 2px dashed var(--border);}
+=======
+.card:active { transform: translate(2px, 2px); }
+>>>>>>> e83f7ab91c2dc3c4daf2201950c5615f44303176
