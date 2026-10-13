@@ -95,8 +95,6 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .col-center { display: flex; flex-direction: column; gap: 14px; }
 .label { font: 700 14px "Archivo Narrow", sans-serif; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); }
 
-.col-right { outline: 2px dashed var(--border); }
-
 .meta { font-size: 17px; color: var(--muted-2); margin-top: 3px;} 
 .station { position: relative; background: var(--yellow); color: var(--ink); border: 3px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); padding: 18px 16px 14px; transform: rotate(-3deg); text-align: center;}
 .tape { position: absolute; top: -13px; left: 50%; width: 90px; height: 26px; background: rgba(244, 239, 227, .6); transform: translateX(-50%) rotate(-3deg); }
@@ -134,3 +132,27 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .burst-pop::before { inset: -6px; background: var(--ink); }
 .burst-pop::after { inset: 0; background: var(--yellow); }
 .burst-pop span { position: relative; z-index: 1; font: 400 28px "Dela Gothic One", sans-serif; color: var(--ink); }
+
+.combo-wrap { position: relative; }
+.combo { font: 400 132px/1 "Dela Gothic One", sans-serif; color: var(--yellow); text-shadow: 6px 6px 0 var(--ink); }
+.mult { position: absolute; right: 0; top: 24px; background: var(--orange); color: d var(--ink); padding: 4px 14px; font: 400 28px "Dela Gothic One", sans-serif;transform: rotate(8deg); box-shadow: 3px 3px 0 var(--ink); }
+
+.signal .row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+.static-pct { color: var(--orange); font-size: 18px; }
+.sigbar { display: flex; height: 34px; border: 3px solid var(--paper); background: var(--lane-alt); }
+.sigbar .clean { background: var(--yellow); }
+
+.static-dots { background-image: radial-gradient(circle, var(--orange) 0 2.4px, transparent 2.8px); background-size: 9px 9px; }
+.signal small { display: block; margin-top: 6px; font-size: 14px; color: var(--muted); }
+.tally { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; }
+.tally div { display: flex; flex-direction: column; }
+.tally b { font: 400 34px/1 "Dela Gothic One", sans-serif; }
+.tally span { font-size: 14px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+
+.callers { display: flex; flex-direction: column; gap: 10px; }
+.bubble { position: relative; background: var(--paper); color: var(--ink); border: 3px solid var(--ink); border-radius: 14px; padding: 8px 14px; font-weight: 700; font-size: 16px; box-shadow: 4px 4px 0 var(--ink); }
+.bubble.yellow { background: var(--yellow); }
+.bubble::after { content: ""; position: absolute; left: 22px; bottom: -13px; border: 7px solid transparent; border-top: 10px solid var(--ink); }
+.b1 { transform: rotate(-2deg); margin-right: 40px; }
+.b2 { transform: rotate(2deg); margin-left: 34px; }
+.b3 { transform: rotate(-1.5deg); margin-right: 60px; }
