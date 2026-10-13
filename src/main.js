@@ -1,8 +1,9 @@
 import "./style.css";
 import {GAME_NAME} from './config.js';
+import { buildDial, setNeedle } from "./dial.js";
 
 document.title = GAME_NAME;
-document.querySelectorAll("[date-game-name]").forEach((el) => (el.textContent = GAME_NAME));
+document.querySelectorAll("[data-game-name]").forEach((el) => (el.textContent = GAME_NAME));
 
 const stage = document.getElementById("stage");
 
@@ -12,6 +13,16 @@ function fit() {
 }
 addEventListener("resize", fit);
 fit();
+
+const dial = document.getElementById("dial");
+buildDial(dial, [93.7, 99.1, 105.5]);
+const cards = document.querySelectorAll(".card");
+cards.forEach((card) => {
+  card.addEventListener("click", () => {
+    cards.forEach((c) => c.classList.toggle("selected", c === card));
+    setNeedle(dial, Number(card.dataset.freq));
+  });
+});
 
 export function show(id) {
   document.querySelectorAll(".screen").forEach((s) => {
