@@ -43,3 +43,8 @@ addEventListener("keydown", (e) => {
   const ids = {1: "screen-tune", 2: "screen-game", 3: "screen-results"};
   if (ids[e.key]) show(ids[e.key]);
 });
+
+const keyEls = {};
+document.querySelectorAll(".key").forEach((k) => (keyEls[k.dataset.k] = k));
+addEventListener("keydown", (e) => keyEls[e.key.toLowerCase()]?.classList.add("pressed"));
+addEventListener("keyup", (e) => keyEls[e.key.toLowerCase()]?.classList.remove("pressed"));

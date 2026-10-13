@@ -8,6 +8,7 @@
     --muted: #b4b9ea;
     --muted-2: #d6d9f5;
     --border: #8f95d6;
+    --burst: polygon(100% 50%, 84.8% 59.3%, 93.3% 75%, 75.5% 75.5%, 75% 93.3%, 59.3% 84.8%, 50% 100%, 40.7% 84.8%, 25% 93.3%, 24.5% 75.5%, 6.7% 75%, 15.2% 59.3%, 0% 50%, 15.2% 40.7%, 6.7% 25%, 24.5% 24.5%, 25% 6.7%, 40.7% 15.2%, 50% 0%, 59.3% 15.2%, 75% 6.7%, 75.5% 24.5%, 93.3% 25%, 84.8% 40.7%);
 }
 
 * { box-sizing: border-box; }
@@ -94,11 +95,11 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .col-center { display: flex; flex-direction: column; gap: 14px; }
 .label { font: 700 14px "Archivo Narrow", sans-serif; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); }
 
-.col-center, .col-right { outline: 2px dashed var(--border); }
+.col-right { outline: 2px dashed var(--border); }
 
 .meta { font-size: 17px; color: var(--muted-2); margin-top: 3px;} 
 .station { position: relative; background: var(--yellow); color: var(--ink); border: 3px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); padding: 18px 16px 14px; transform: rotate(-3deg); text-align: center;}
-.tape { position: absolute; top: -13px; left: 50%; width: 90px; height: 26px; background: rgba(244, 239, 277, .6); transform: translateX(-50%) rotate(-3deg);}
+.tape { position: absolute; top: -13px; left: 50%; width: 90px; height: 26px; background: rgba(244, 239, 227, .6); transform: translateX(-50%) rotate(-3deg); }
 .fm { display: block; font: 400 28px "Dela Gothic One", sans-serif; }
 .big-freq { display: block; font: 400 88px/1 "Dela Gothic One", sans-serif; }
 .station-sub { display: block; font-weight: 700; font-size: 17px; text-transform: uppercase; margin-top: 6px; }
@@ -108,3 +109,28 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .spectrum i { flex: 1; height: var(--h); background: var(--orange); }
 .spectrum i.y { background: var(--yellow); }
 .score { font: 400 54px/1.05 "Dela Gothic One", sans-serif; }
+
+.progress { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; color: var(--muted-2);}
+.progress .bar { flex: 1; height: 10px; background: var(--ink); border: 2px solid var(--paper);}
+.progress .bar i { display: block; height: 100%; background: var(--yellow);}
+
+.lanebox { position: relative; flex: 1; border: 4px solid var(--paper); box-shadow: 8px 8px 0 var(--ink); background: var(--ground);}
+.lanes { position: absolute; inset: 0; display: flex; }
+.lane { flex: 1; background: var(--ground);}
+.lane.alt { background: var(--lane-alt);}
+.hitline { position: absolute; left: 0; right: 0; bottom: 64px; height: 10px; background: var(--paper);}
+
+.keys { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 0 8px 6px; }
+.key { height: 64px; display: grid; place-items: center; background: var(--paper); color: var(--ink); border: 3px solid var(--ink); border-radius: 10px; box-shadow: 0 5px 0 var(--ink); font: 400 32px "Dela Gothic One", sans-serif; }
+.key.pressed { background: var(--yellow); transform: translateY(4px); box-shadow: 0 1px 0 var(--ink); }
+
+.note { position: absolute; width: 104px; height: 26px; transform: translateX(-50%); border: 3px solid var(--ink); border-radius: 8px; box-shadow: 3px 3px 0 var(--ink); }
+.note.orange { background: var(--orange); }
+.note.yellow { background: var(--yellow); }
+.hold { position: absolute; transform: translateX(-50%); }
+
+.burst-pop { position: absolute; left: 50%; bottom: 96px; width: 190px; height: 150px; display: grid; place-items: center; transform: translateX(-50%) rotate(-6deg); filter: drop-shadow(5px 5px 0 var(--ink)); }
+.burst-pop::before, .burst-pop::after { content: ""; position: absolute; clip-path: var(--burst); }
+.burst-pop::before { inset: -6px; background: var(--ink); }
+.burst-pop::after { inset: 0; background: var(--yellow); }
+.burst-pop span { position: relative; z-index: 1; font: 400 28px "Dela Gothic One", sans-serif; color: var(--ink); }
