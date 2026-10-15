@@ -145,7 +145,38 @@
       </div>
     </section>
     <section id="screen-results" class="screen">
-      <h1>Results</h1>
+      <div class="res-grid">
+        <div class="res-left">
+          <div class="grade-burst"><span class="grade">A</span></div>
+          <h2 class="held">Signal held</h2>
+          <p class="held-sub">you did crazy af on this song</p>
+          <div class="bubble res-bubble">Best shit ever for all the week</div>
+        </div>
+        <div class="res-right">
+          <div class="receipt">
+            <h3>Broadcast report</h3>
+            <p class="rsub">Night Shift · FM 93.7</p>
+            <div class="rrow"><span>Score</span><b>482,310</b></div>
+            <div class="rrow"><span>Accuracy</span><b>94.2%</b></div>
+            <div class="rrow"><span>Best streak</span><b>187</b></div>
+            <div class="rrow"><span>Perfect · Great · Good · Miss</span><b>214 · 61 · 18 · 4</b></div>
+            <div class="rrow"><span>Peak static</span><b>28%</b></div>
+          </div>
+          <div class="chart">
+            <span class="label">Signal over time</span>
+            <svg viewBox="0 0 560 120" width="100%" height="110" preserveAspectRatio="none">
+              <line x1="0" y1="96" x2="560" y2="96" stroke="#ff5b2e" stroke-width="3" stroke-dasharray="10 8"/>
+              <polyline fill="none" stroke="#ffd84a" stroke-width="7" stroke-linejoin="round" stroke-linecap="round" points="6,30 70,28 130,32 180,72 210,40 270,34 330,36 370,84 410,44 470,30 554,26"/>
+              <rect x="0" y="112" width="560" height="5" fill="#f4efe3"/>
+            </svg>
+            <small class="off-label">off air type shit</small>
+          </div>
+          <div class="res-buttons">
+            <button id="btn-again" class="btn-yellow">Play again</button>
+            <button id="btn-new" class="btn-ghost">New Station</button>
+          </div>
+        </div>
+      </div>
     </section>
   </div>
   <script type="module" src="/src/main.js"></script>

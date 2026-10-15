@@ -48,3 +48,6 @@ const keyEls = {};
 document.querySelectorAll(".key").forEach((k) => (keyEls[k.dataset.k] = k));
 addEventListener("keydown", (e) => keyEls[e.key.toLowerCase()]?.classList.add("pressed"));
 addEventListener("keyup", (e) => keyEls[e.key.toLowerCase()]?.classList.remove("pressed"));
+
+document.getElementById("btn-again").addEventListener("click", () => show("screen-game"))
+document.getElementById("btn-new").addEventListener("click", () => show("screen-tune"))

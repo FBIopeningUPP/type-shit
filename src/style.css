@@ -135,24 +135,54 @@ button { font: inherit; color: inherit; cursor: pointer; }
 
 .combo-wrap { position: relative; }
 .combo { font: 400 132px/1 "Dela Gothic One", sans-serif; color: var(--yellow); text-shadow: 6px 6px 0 var(--ink); }
-.mult { position: absolute; right: 0; top: 24px; background: var(--orange); color: d var(--ink); padding: 4px 14px; font: 400 28px "Dela Gothic One", sans-serif;transform: rotate(8deg); box-shadow: 3px 3px 0 var(--ink); }
+.mult { position: absolute; right: 0; top: 24px; background: var(--orange); color: var(--ink); border: 3px solid var(--ink); padding: 4px 14px; font: 400 28px "Dela Gothic One", sans-serif; transform: rotate(8deg); box-shadow: 3px 3px 0 var(--ink); }
 
-.signal .row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
-.static-pct { color: var(--orange); font-size: 18px; }
-.sigbar { display: flex; height: 34px; border: 3px solid var(--paper); background: var(--lane-alt); }
-.sigbar .clean { background: var(--yellow); }
+.signal .row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;}
+.static-pct { color: var(--orange); font-size: 18px;}
+.sigbar { display: flex; height: 34px; border: 3px solid var(--paper); background: var(--lane-alt);}
+.sigbar .clean { background: var(--yellow);}
+.static-bots { background-image: radial-gradient(circle, var(--orange) 0 2.4px, transparent 2.8px); background-size: 9px 9px; }
+.signal small { display: block; margin-top: 6px; font-size: 14px; color: var(--muted);}
 
-.static-dots { background-image: radial-gradient(circle, var(--orange) 0 2.4px, transparent 2.8px); background-size: 9px 9px; }
-.signal small { display: block; margin-top: 6px; font-size: 14px; color: var(--muted); }
-.tally { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; }
-.tally div { display: flex; flex-direction: column; }
-.tally b { font: 400 34px/1 "Dela Gothic One", sans-serif; }
-.tally span { font-size: 14px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+.tally { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px;}
+.tally div { display: flex; flex-direction: column;}
+.tally b { font: 400 32px/1 "Dela Gothic One", sans-serif;}
+.tally span { font-size: 14px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted);}
 
-.callers { display: flex; flex-direction: column; gap: 10px; }
-.bubble { position: relative; background: var(--paper); color: var(--ink); border: 3px solid var(--ink); border-radius: 14px; padding: 8px 14px; font-weight: 700; font-size: 16px; box-shadow: 4px 4px 0 var(--ink); }
-.bubble.yellow { background: var(--yellow); }
+.callers { display: flex; flex-direction: column; gap: 10px;}
+.bubble { position: relative; background: var(--paper); color: var(--ink); border: 3px solid var(--ink); border-radius: 14px; padding: 8px 14px; font-weight: 700; font-size: 16px; box-shadow: 4px 4px 0 var(--ink);}
+.bubble.yellow { background: var(--yellow);}
 .bubble::after { content: ""; position: absolute; left: 22px; bottom: -13px; border: 7px solid transparent; border-top: 10px solid var(--ink); }
-.b1 { transform: rotate(-2deg); margin-right: 40px; }
-.b2 { transform: rotate(2deg); margin-left: 34px; }
-.b3 { transform: rotate(-1.5deg); margin-right: 60px; }
+.b1 { transform: rotate(-2deg); margin-right: 40px;}
+.b2 { transform: rotate(2deg); margin-left: 34px;}
+.b3 { transform: rotate(-1.5deg); margin-right: 60px;}
+
+#screen-results { padding: 36px 48px; }
+.res-grid { display: grid; grid-template-columns: 540px 1fr; gap: 56px; height: 100%; }
+.res-left { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 10px; }
+.grade-burst { position: relative; width: 400px; height: 400px; display: grid; place-items: center; transform: rotate(-4deg); filter: drop-shadow(8px 8px 0 var(--ink)); }
+.grade-burst::before { content: ""; position: absolute; inset: 0; background: var(--orange); clip-path: var(--burst); }
+.grade { position: relative; font: 400 250px/1 "Dela Gothic One", sans-serif; color: var(--yellow); text-shadow: 8px 8px 0 var(--ink); }
+.held { font-size: 56px; }
+.held-sub { font-size: 22px; color: var(--muted-2); }
+.res-bubble { transform: rotate(-2deg); margin-top: 8px; font-size: 18px; }
+
+.res-right { display: flex; flex-direction: column; justify-content: space-between; }
+.receipt { background: var(--paper); color: var(--ink); padding: 20px 28px; transform: rotate(1.2deg); box-shadow: 8px 8px 0 var(--orange); }
+.receipt h3 { font-size: 28px; }
+.rsub { font-size: 17px; margin-bottom: 8px; }
+.rrow { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 9px 0; border-top: 2px dashed var(--ink); font-size: 18px; }
+.rrow b { font-size: 21px; text-align: right; }
+
+.chart { position: relative; }
+.chart svg { display: block; margin-top: 6px; }
+.off-label { position: absolute; right: 4px; bottom: 36px; color: var(--orange); font-weight: 700; font-size: 13px; text-transform: uppercase; }
+
+.res-buttons { display: flex; gap: 18px; }
+.btn-yellow, .btn-ghost { flex: 1; padding: 18px; font: 400 26px "Dela Gothic One", sans-serif; border: 3px solid var(--ink); transition: transform .08s, box-shadow .08s; }
+.btn-yellow { background: var(--yellow); color: var(--ink); box-shadow: 6px 6px 0 var(--orange); }
+.btn-ghost { background: transparent; color: var(--paper); border-color: var(--paper); box-shadow: 6px 6px 0 var(--ink); }
+.btn-yellow:hover { transform: translate(2px, 2px); box-shadow: 4px 4px 0 var(--orange); }
+.btn-ghost:hover { transform: translate(2px, 2px); box-shadow: 4px 4px 0 var(--ink); }
+.btn-yellow:active { transform: translate(4px, 4px); box-shadow: 2px 2px 0 var(--orange); }
+.btn-ghost:active { transform: translate(4px, 4px); box-shadow: 2px 2px 0 var(--ink); }
