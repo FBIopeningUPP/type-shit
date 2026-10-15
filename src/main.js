@@ -1,6 +1,7 @@
 import "./style.css";
 import {GAME_NAME} from './config.js';
 import { buildDial, setNeedle } from "./dial.js";
+import { startClock, stopClock, songTime } from "./clock.js";
 
 document.title = GAME_NAME;
 document.querySelectorAll("[data-game-name]").forEach((el) => (el.textContent = GAME_NAME));
@@ -37,8 +38,9 @@ export function show(id) {
   document.querySelectorAll(".screen").forEach((s) => {
     s.classList.toggle("active", s.id === id);
   });
+  if (id === "screen-game") startClock();
+  else stopClock();
 }
-
 addEventListener("keydown", (e) => {
   const ids = {1: "screen-tune", 2: "screen-game", 3: "screen-results"};
   if (ids[e.key]) show(ids[e.key]);
@@ -49,5 +51,18 @@ document.querySelectorAll(".key").forEach((k) => (keyEls[k.dataset.k] = k));
 addEventListener("keydown", (e) => keyEls[e.key.toLowerCase()]?.classList.add("pressed"));
 addEventListener("keyup", (e) => keyEls[e.key.toLowerCase()]?.classList.remove("pressed"));
 
-document.getElementById("btn-again").addEventListener("click", () => show("screen-game"))
-document.getElementById("btn-new").addEventListener("click", () => show("screen-tune"))
+document.getElementById("btn-again").addEventListener("click", () => show("screen-game"));
+document.getElementById("btn-new").addEventListener("click", () => show("screen-tune"));
+
+const TEST_SONG_LENGTH = 188;
+const timeNow = document.getElementById("time-now");
+const barFill = document.getElementById("bar-fill");
+const fmt = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
+
+function frame() {
+  const t = Math.max(songTime(), 0);
+  timeNow.textContent = fmt(t);
+  barFill.style.width = Math.min(t / TEST_SONG_LENGTH, 1) * 100 + "%";
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame)l

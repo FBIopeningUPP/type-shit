@@ -141,7 +141,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .static-pct { color: var(--orange); font-size: 18px;}
 .sigbar { display: flex; height: 34px; border: 3px solid var(--paper); background: var(--lane-alt);}
 .sigbar .clean { background: var(--yellow);}
-.static-bots { background-image: radial-gradient(circle, var(--orange) 0 2.4px, transparent 2.8px); background-size: 9px 9px; }
+.static-dots { background-image: radial-gradient(circle, var(--orange) 0 2.4px, transparent 2.8px); background-size: 9px 9px; }
 .signal small { display: block; margin-top: 6px; font-size: 14px; color: var(--muted);}
 
 .tally { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px;}
